@@ -27,7 +27,6 @@ interface Props {
 
 const Table: React.FC<Props> = props => {
     const { pokemonList, isSearching, searchPokemonList } = props;
-    console.log(pokemonList);
 
     // removePokemon action creator
     const removePokemon = bindActionCreators(removePokemonAC, useDispatch());

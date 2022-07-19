@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/pokemons/', async (req, res) => {
-    const response = await fetch('https://pokecrud-e4efc-default-rtdb.firebaseio.com/pokemons.json');
+    const response = await fetch('https://pokecrud-45cbf-default-rtdb.firebaseio.com/pokemons.json');
     const pokemons = await response.json();
 
     res.json(pokemons);
@@ -20,7 +20,7 @@ app.get('/api/pokemons/', async (req, res) => {
 app.post('/api/pokemons/', async (req, res) => {
     const { method, body, header } = req;
 
-    const response = await fetch('https://pokecrud-e4efc-default-rtdb.firebaseio.com/pokemons.json', {
+    const response = await fetch('https://pokecrud-45cbf-default-rtdb.firebaseio.com/pokemons.json', {
         method,
         body: JSON.stringify(body),
         header,
@@ -35,7 +35,7 @@ app.put('/api/pokemons/:pokemonId', async (req, res) => {
     const { pokemonId } = req.params;
     const { method, body, header } = req;
 
-    let response = await fetch(`https://pokecrud-e4efc-default-rtdb.firebaseio.com/pokemons/${pokemonId}.json`, {
+    let response = await fetch(`https://pokecrud-45cbf-default-rtdb.firebaseio.com/pokemons/${pokemonId}.json`, {
         method,
         body: JSON.stringify(body),
         header,
@@ -48,7 +48,7 @@ app.put('/api/pokemons/:pokemonId', async (req, res) => {
 app.delete('/api/pokemons/:pokemonId', async (req, res) => {
     const { pokemonId } = req.params;
 
-    let response = await fetch(`https://pokecrud-e4efc-default-rtdb.firebaseio.com/pokemons/${pokemonId}.json`, {
+    let response = await fetch(`https://pokecrud-45cbf-default-rtdb.firebaseio.com/pokemons/${pokemonId}.json`, {
         method: 'DELETE',
     });
 
